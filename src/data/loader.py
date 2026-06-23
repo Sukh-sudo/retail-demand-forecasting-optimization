@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.utils.config import RAW_DATA
+from src.utils.config import RAW_DATA, PROCESSED_DATA
 
 
 def load_data():
@@ -16,3 +16,10 @@ def load_data():
     )
 
     return calendar, sales, prices
+
+
+def load_master_data():
+
+    return pd.read_parquet(
+        PROCESSED_DATA / "master_dataset.parquet"
+    )

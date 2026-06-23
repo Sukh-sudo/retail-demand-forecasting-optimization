@@ -13,3 +13,6 @@ MODELS = OUTPUTS / "models"
 RANDOM_STATE = 42
 FORECAST_HORIZON = 28
 SERVICE_LEVEL = 0.95
+
+# Data processing settings
+CHUNK_SIZE = 100
