@@ -24,3 +24,8 @@ outputs/
 Thumbs.db
 
 .agents
+
+# Build artifacts
+*.egg-info/
+build/
+dist/
