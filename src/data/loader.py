@@ -23,3 +23,12 @@ def load_master_data():
     return pd.read_parquet(
         PROCESSED_DATA / "master_dataset.parquet"
     )
+
+def load_features():
+    """
+    Load the engineered feature dataset created in Notebook 04.
+    """
+
+    return pd.read_parquet(
+        PROCESSED_DATA / "model_dataset.parquet"
+    )

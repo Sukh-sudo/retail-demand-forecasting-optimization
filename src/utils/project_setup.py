@@ -1,10 +1,5 @@
 """
-Project-wide notebook setup.
-
-This module standardizes notebook behavior by:
-- Configuring display settings
-- Setting random seeds
-- Suppressing unnecessary warnings
+Project-wide notebook configuration.
 """
 
 import random
@@ -13,16 +8,22 @@ import warnings
 import numpy as np
 import pandas as pd
 
-from src.utils.config import RANDOM_STATE
+# Global random seed
+RANDOM_STATE = 42
 
-warnings.filterwarnings("ignore")
+def configure_notebook():
+    """Configure common notebook settings for the project."""
 
-# Pandas display options
-pd.set_option("display.max_columns", None)
-pd.set_option("display.max_rows", 100)
-pd.set_option("display.width", 150)
-pd.set_option("display.max_colwidth", None)
+    # Reproducibility
+    random.seed(RANDOM_STATE)
+    np.random.seed(RANDOM_STATE)
 
-# Reproducibility
-random.seed(RANDOM_STATE)
-np.random.seed(RANDOM_STATE)
+    # Display options
+    pd.set_option("display.max_columns", None)
+    pd.set_option("display.max_rows", 100)
+    pd.set_option("display.width", 120)
+
+    # Suppress unnecessary warnings
+    warnings.filterwarnings("ignore")
+
+    print("Notebook configured successfully.")
